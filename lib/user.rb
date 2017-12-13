@@ -1,4 +1,5 @@
 require './lib/joke'
+require 'csv'
 
 class User
   attr_reader :name, :jokes, :count
@@ -27,11 +28,11 @@ class User
     end
   end
 
-end
-    
-# sal = User.new("Sal")
-# sal.learn(joke)
-# sal.jokes
+  def learn_routine(jokes)
+    CSV.foreach(jokes, headers: true) do |row|
+      self.learn(row)
+      @count += 1
+    end
+  end
 
-# ali = User.new("Ali")
-# sal.tell(ali, joke)
+end
