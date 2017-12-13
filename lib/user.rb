@@ -23,9 +23,9 @@ class User
 
 end
     
-sal = User.new("Sal")
-sal.learn(joke)
-sal.jokes
+# sal = User.new("Sal")
+# sal.learn(joke)
+# sal.jokes
 
-ali = User.new("Ali")
-sal.tell(ali, joke)
+# ali = User.new("Ali")
+# sal.tell(ali, joke)

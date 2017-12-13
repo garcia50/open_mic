@@ -15,6 +15,10 @@ class JokeTest < Minitest::Test
     assert_instance_of Joke, joke
   end
 
+  def test_joke_id_returns_1
+    assert_equal 1, joke.id
+  end
+
   def test_is_question_method_returns_question
     @joke = joke
     q = "Why did the strawberry cross the road?"

@@ -3,18 +3,10 @@ class Joke
 
   def initialize(joke)
     @joke = joke
-  end
-
-  def id
-    joke[id]
+    @id = joke[:id]
+    @question = joke[:question]
+    @answer = joke[:answer]
   end
   
-  def question
-    "Why did the strawberry cross the road?"
-  end
-
-  def answer
-    "Because his mother was in a jam."
-  end
 end
 
