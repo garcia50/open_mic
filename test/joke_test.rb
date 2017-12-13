@@ -20,21 +20,18 @@ class JokeTest < Minitest::Test
   end
 
   def test_is_question_method_returns_question
-    @joke = joke
     q = "Why did the strawberry cross the road?"
 
     assert_equal q, joke.question
   end
 
   def test_is_answer_method_returns_answer
-    @joke = joke
     a = "Because his mother was in a jam."
 
     assert_equal a, joke.answer
   end
 
   def test_question_method_returns_answer
-    @joke = joke
     q = joke.question
     a = joke.answer
     assert a, q
