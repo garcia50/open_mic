@@ -4,27 +4,33 @@ require 'minitest/pride'
 require './lib/joke'
 
 class JokeTest < Minitest::Test
+  attr_reader :joke
+
+  def setup
+    @joke = Joke.new({id: 1, question: "Why did the strawberry cross the road?", 
+                      answer: "Because his mother was in a jam."})
+  end
 
   def test_if_joke_class_exist
-    assert_instance_of Joke, Joke.new
+    assert_instance_of Joke, joke
   end
 
   def test_is_question_method_returns_question
-    joke = Joke.new
+    @joke = joke
     q = "Why did the strawberry cross the road?"
 
     assert_equal q, joke.question
   end
 
   def test_is_answer_method_returns_answer
-    joke = Joke.new
+    @joke = joke
     a = "Because his mother was in a jam."
 
     assert_equal a, joke.answer
   end
 
   def test_question_method_returns_answer
-    joke = Joke.new
+    @joke = joke
     q = joke.question
     a = joke.answer
     assert a, q

@@ -1,5 +1,5 @@
 class Joke
-  attr_accessor :question, :answer
+  attr_accessor :id, :question, :answer
 
   def initialize(joke)
     @joke = joke
