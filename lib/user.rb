@@ -1,25 +1,25 @@
 require './lib/joke'
 
 class User
-  attr_reader :name, :question, :answer, :joke
+  attr_reader :name, :jokes, :count
 
   def initialize(name)
     @name = name
-    @question = question
-    @joke = joke
+    # @question = question
+    # @joke = joke
     @jokes = []
     @count = 0
   end
 
   def learn(joke)
-    @jokes = @joke.question
+    @jokes << joke
   end
 
-  def tell(name, joke)
-    @joke.question
-    @count += 1
-    @jokes << @count
-  end
+  # def tell(name, joke)
+  #   @joke.question
+  #   @jokes << @count
+  #   @count += 1
+  # end
 
 end
     
