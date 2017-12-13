@@ -15,11 +15,10 @@ class User
     @jokes << joke
   end
 
-  # def tell(name, joke)
-  #   @joke.question
-  #   @jokes << @count
-  #   @count += 1
-  # end
+  def tell(name, joke)
+    name.learn(joke) 
+    @count += 1
+  end
 
 end
     

@@ -42,9 +42,13 @@ class UserTest < Minitest::Test
    assert_equal [joke], sal.jokes
   end
 
-  # def test_
-    
-  # end
+  def test_sal_tells_joke_to_ali
+    ali = User.new("Ali")
+    sal.tell(ali, joke)
+   
+    assert_equal [joke], ali.jokes
+    assert_equal 1, ali.jokes.count
+  end
 
 end
 
