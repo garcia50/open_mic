@@ -6,8 +6,6 @@ class User
 
   def initialize(name)
     @name = name
-    # @question = question
-    # @joke = joke
     @jokes = []
     @count = 0
   end
