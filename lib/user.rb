@@ -20,6 +20,13 @@ class User
     @count += 1
   end
 
+  def perform_routine_for(person)
+    jokes.each do |joke|
+      self.tell(person, joke)
+      @count += 1
+    end
+  end
+
 end
     
 # sal = User.new("Sal")

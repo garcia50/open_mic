@@ -5,12 +5,14 @@ require './lib/user'
 require './lib/joke'
 
 class UserTest < Minitest::Test
-  attr_reader :sal, :joke
+  attr_reader :sal, :joke, :joke_2
 
   def setup
     @sal = User.new("Sal")
     @joke = Joke.new({id: 1, question: "Why did the strawberry cross the road?", 
                       answer: "Because his mother was in a jam."})
+    @joke_2 = Joke.new({id: 1, question: "What did the flower say to the bike?", 
+                      answer: "Petal"})
   end
 
   def test_it_exists
@@ -48,6 +50,17 @@ class UserTest < Minitest::Test
    
     assert_equal [joke], ali.jokes
     assert_equal 1, ali.jokes.count
+  end
+
+  def test_ilana_can_perform_routine_for_josh
+    ilana = User.new("Ilana")
+    josh = User.new("Josh")
+    ilana.learn(joke)
+    ilana.learn(joke_2)
+    ilana.perform_routine_for(josh)
+    
+    assert_equal [joke, joke_2], josh.jokes
+    assert_equal 2, josh.jokes.count
   end
 
 end
